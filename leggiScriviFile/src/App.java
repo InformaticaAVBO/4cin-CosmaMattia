@@ -10,26 +10,36 @@ public class App {
 
         System.out.println("Inserisci il nome del file di output: ");
         String nomeOutput = input.nextLine();
-
-        // Apre il file di input per leggere
-        File fileInput = new File(nomeInput);
-        Scanner lettore = new Scanner(fileInput);
         
-        // Prima scrivo su un file
-        FileWriter myWriter = new FileWriter("filename.txt");
-        for (int i = 0; i < 10; i++) {
-            myWriter.write("Questa è una prova\n");
-        }
+        //Creo il file 
+        FileWriter myWriter = new FileWriter(nomeInput); 
+
+        // Scrivo sul file 
+        for(int i = 0; i < 100; i++) { 
+            myWriter.write("Questa è una prima frase scritta in un file. \n"); 
+        } 
         myWriter.close();
-        System.out.println("Ok, ho scritto su file");
-        // Ora leggo dal file
-        File f = new File("filename.txt");
-        Scanner leggi = new Scanner (f);
+
+        // Apro il file di input per leggere
+        File fileInput = new File(nomeInput);
+        Scanner leggi = new Scanner(fileInput);
+
+        // Creo il file di output per scrivere
+        FileWriter fileOutput = new FileWriter(nomeOutput);
+
+        // Copio ogni riga
         while (leggi.hasNextLine()) {
             String s = leggi.nextLine();
-            System.out.println(s);
+            fileOutput.write(s + "\n");
         }
+        fileOutput.close();
+
+        System.out.println("Ok, ho scritto sul file!");
+
+        // Chiudo tutto
         leggi.close();
+        input.close();
     }
 }
+
 
