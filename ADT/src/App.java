@@ -1,6 +1,13 @@
 public class App {
     public static void main(String[] args) throws Exception {
         
+        Coppia<String, Persona> p = new Coppia<>("Mario", new Persona("Mario", "Rossi"));
+        System.out.println(p);
+        Coppia<String, Persona> q = new Coppia<>("Luigi", new Persona("Luigi", "Verdi"));
+        System.out.println(q);
+        System.out.println(p.getSecondo().getClass());
+        System.out.println(q.getSecondo().getClass());
+        
         Vettore<String> x = new Vettore<>(0, 0);
         for (int i=0; i<23; i++)
             x.add("Juve_" + i);

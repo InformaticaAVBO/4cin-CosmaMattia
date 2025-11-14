@@ -4,6 +4,10 @@ public class Vettore<T> {
     int n;
     int start;
     int delta;
+    
+    public Vettore() {
+        this(10, 5);
+    }
 
     @SuppressWarnings("unchecked")
     public Vettore( int start, int delta ) {
