@@ -1,39 +1,23 @@
 public class Stack {
-    private Nodo top;
-
-    private class Nodo {
-        Object valore;
-        Nodo next;
-
-        Nodo( Object valore ) {
-            this.valore = valore;
-            this.next = null;
-        }
-    }
+    private Vettore<Object> pila;
 
     public Stack() {
-        top = null;
+        pila = new Vettore<Object>(10, 10);
     }
-
-    public void push( Object valore ) {
-        Nodo nuovo = new Nodo(valore);
-        nuovo.next = top;
-        top = nuovo;
+    public void push(Object o) {
+        pila.add(o);
     }
-
     public Object pop() {
-        if (top == null) return null;
-        Object valore = top.valore;
-        top = top.next;
-        return valore;
+        if (pila.get(0)==null) return null;
+        Object o = pila.get(pila.n-1);
+        pila.n--;
+        return o;
+    }
+    public String isEmpty() {
+        if(pila.n==0) 
+        return "Lo stack è vuoto";
+        else 
+        return "Lo stack non è vuoto";
     }
 
-    public Object peek() {
-        if (top == null) return null;
-        return top.valore;
-    }
-
-    public boolean isEmpty() {
-        return top == null;
-    }
 }
