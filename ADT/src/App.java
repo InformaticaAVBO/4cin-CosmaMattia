@@ -16,6 +16,16 @@ public class App {
         System.out.println(x.get(3));
         System.out.println(x.get(3).getClass());
 
-        Vettore<Persona> elenco = new Vettore<Persona>(10, 5);  
+        Vettore<Persona> elenco = new Vettore<Persona>(10, 5);
+
+        Stack s = new Stack();
+        s.push(new Persona("Mattia", "Cosma"));
+        s.push(new Persona("Gianni", "Morandi"));
+        System.out.println(s.isEmpty());
+        System.out.println(s.pop());
+        System.out.println(s.pop());
+        System.out.println(s.isEmpty());
+        
     }
+
 }
