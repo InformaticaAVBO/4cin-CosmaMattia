@@ -1,0 +1,14 @@
+class Tripletta<A,B,C> {
+    private A valueofA;
+    private B valueofB;
+    private C valueofC;
+
+    public Tripletta(A a; B b, C c) {
+        valueofA = a;
+        valueofB = b;
+        valueofC = C;
+    }
+    public String toString() {
+        return "Valori: " + valueofA + " - " + valueofB + " - " + valueofC;
+    }
+}
