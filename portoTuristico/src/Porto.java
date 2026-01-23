@@ -61,4 +61,16 @@ public class Porto {
         // Ridimensiona l'array per restituire solo i nomi trovati
         return nomi;
     }
-}
+    public String toString() {
+        System.out.println("Stato del Porto:");
+        for (int i = 0; i < posti.length; i++) {
+            PostoBarca p = posti[i];
+            if (p.occupato()) {
+                System.out.println("Posto " + (i + 1) + ": Occupato da " + p.getBarca().getNome());
+            } else {
+                System.out.println("Posto " + (i + 1) + ": Libero");
+            }
+        }
+        return "";
+     }
+}   
