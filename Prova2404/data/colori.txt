@@ -1,0 +1,5 @@
+Rosso,Triangolo,100
+Verde,Quadrato,2
+Marrone,Cerchio,234
+Viola,Esagono,67
+Nero,Trapezio,23
